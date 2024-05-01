@@ -12,11 +12,11 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-full flex justify-between items-center bg-slate-900 text-white text-2xl py-3 px-7">
+    <div className="w-full flex justify-between items-center bg-slate-900 text-white text-2xl py-3 px-7  ">
       <div>
         <h4>Shopping Cart</h4>
       </div>
-      <div>
+      <div className="hidden md:block">
         <ul className="flex gap-10">
           <li>
             <a href="#">Home</a>

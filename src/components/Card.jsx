@@ -6,7 +6,7 @@ import { useProductData } from "../context/ProductContext";
 const Card = ({ id, title, thumbnail, price, rating }) => {
   const { addToCart } = useProductData();
   return (
-    <div className="flex flex-col gap-2  w-[230px] bg-white rounded-lg shadow-2xl px-5 py-5">
+    <div className="flex flex-col w-[170px] bg-white rounded-lg shadow-2xl px-5 py-5 sm:w-[210px] ">
       <div className="flex justify-center w-full h-[150px]">
         <img src={thumbnail} alt="" width={150} height={100} />
       </div>

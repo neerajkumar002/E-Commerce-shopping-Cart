@@ -7,7 +7,7 @@ const Main = () => {
   
 
   return (
-    <div className="w-full min-h-screen bg-gray-200 px-8 py-10 grid grid-cols-5 gap-5">
+    <div className="w-full min-h-screen bg-gray-200 grid grid-cols-2 gap-5 p-2 place-items-center sm:grid-cols-3 lg:grid-cols-5 lg:gap-3">
      
 
       {productsData && productsData.length > 0
