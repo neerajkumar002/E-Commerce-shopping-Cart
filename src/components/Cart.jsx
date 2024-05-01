@@ -7,7 +7,7 @@ const Cart = ({ showCart, toggle }) => {
 
   return (
     showCart && (
-      <div className="fixed top-0 right-0 bg-black w-full h-full sm:w-[600px] lg:w-[400px] ">
+      <div className="fixed top-0 right-0 bg-black w-full h-full sm:w-[600px] lg:w-[480px] ">
         <button className="absolute right-0 top-1" onClick={toggle}>
           <IoClose />
         </button>
