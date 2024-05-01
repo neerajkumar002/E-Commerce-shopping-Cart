@@ -21,6 +21,7 @@ function App() {
     fetchData("https://dummyjson.com/products");
   }, []);
 
+  //add to cart function
   const addToCart = (id) => {
     const exsitingProduct = localProductArr.find(
       (localProduct) => localProduct.id === id
@@ -45,6 +46,7 @@ function App() {
     }
   };
 
+  //calculate total function
   const calculateTotal = () => {
     return localProductArr.reduce(
       (total, item) => total + item.price * item.quantity,
@@ -57,9 +59,36 @@ function App() {
     setCartValue(localProductArr.length);
   }, [localProductArr]);
 
+  //clear cart function
   const clearCart = () => {
     setLocalProductArr([]);
     localStorage.setItem("cartItemsList", JSON.stringify([]));
+  };
+
+  //remove product in cart
+  const removeCartProduct = (id) => {
+    setLocalProductArr(localProductArr.filter((item) => item.id !== id));
+  };
+
+  // qunatity decrement function
+  const decrementQuantity = (getProductId) => {
+    const isProductInLs = localProductArr.find(
+      (curProduct) => curProduct.id === getProductId
+    );
+ 
+    if (isProductInLs.quantity === 1) {
+      setLocalProductArr(
+        localProductArr.filter((item) => item.id !== getProductId)
+      )
+    } else {
+      setLocalProductArr(
+        localProductArr.map((item) =>
+          item.id === getProductId
+            ? { ...item, quantity: item.quantity - 1 }
+            : item
+        )
+      );
+    }
   };
 
   return (
@@ -69,8 +98,11 @@ function App() {
         addToCart,
         cartValue,
         localCartItems,
+        localProductArr,
         calculateTotal,
         clearCart,
+        decrementQuantity,
+        removeCartProduct,
       }}
     >
       <Navbar />

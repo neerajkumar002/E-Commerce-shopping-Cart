@@ -2,7 +2,7 @@ import { IoClose } from "react-icons/io5";
 import { useProductData } from "../context/ProductContext";
 import CartItem from "./CartItem";
 const Cart = ({ showCart, toggle }) => {
-  const { productsData, localCartItems, calculateTotal, clearCart } =
+  const { productsData, localCartItems, calculateTotal, clearCart,localProductArr } =
     useProductData();
 
   return (
@@ -21,8 +21,8 @@ const Cart = ({ showCart, toggle }) => {
           </button>
         </div>
         <div className="flex flex-col gap-2 overflow-y-auto h-full">
-          {localCartItems && localCartItems.length > 0
-            ? localCartItems.map((item) => {
+          {localProductArr && localProductArr.length > 0
+            ? localProductArr.map((item) => {
                 const product = productsData.find(
                   (curProduct) => curProduct.id === item.id
                 );
@@ -31,6 +31,7 @@ const Cart = ({ showCart, toggle }) => {
                 ) : (
                   <CartItem
                     key={item.id}
+                    id={item.id}
                     quantity={item.quantity}
                     title={product.title}
                     price={product.price}
