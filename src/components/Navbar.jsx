@@ -19,13 +19,11 @@ const Navbar = () => {
       <div className="hidden md:block">
         <ul className="flex gap-10">
           <li>
-            <a href="#">Home</a>
+            <a href="/">Home</a>
           </li>
+         
           <li>
-            <a href="#">Products</a>
-          </li>
-          <li>
-            <a href="#">About us</a>
+            <a href="/about">About us</a>
           </li>
         </ul>
       </div>

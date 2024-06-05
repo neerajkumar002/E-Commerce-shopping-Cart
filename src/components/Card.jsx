@@ -1,14 +1,25 @@
 import { FaStar } from "react-icons/fa";
 import { BiSolidCartAdd } from "react-icons/bi";
 import { useProductData } from "../context/ProductContext";
+import { Link } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
 const Card = ({ id, title, thumbnail, price, rating }) => {
   const { addToCart } = useProductData();
+
+  
   return (
     <div className="flex flex-col w-[170px] bg-white rounded-lg shadow-2xl px-5 py-5 sm:w-[210px] ">
       <div className="flex justify-center w-full h-[150px]">
-        <img src={thumbnail} alt="" width={150} height={100} />
+       <Link to={`/${id}`}>
+        <img
+          src={thumbnail}
+          alt=""
+          width={150}
+          height={100}
+           
+        />
+        </Link>
       </div>
       <p className=" font-bold text-sm text-center h-8">{title}</p>
       <div className="flex justify-between items-center gap-2">
